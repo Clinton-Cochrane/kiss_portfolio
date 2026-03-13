@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "id": "crank-city-cycles",
+      "projectTitle": "Crank City Cycles",
+      "techStack": "React.JS, Tailwind.css",
+      "screenShot": "/projectImages/project1.png",
+      "description": "Free landing webpage for a mobile bike mechanic.",
+      "externalLink": "https://www.crankcitycycles.com"
+    },
+    {
+      "id": "little-town-bakes",
+      "projectTitle": "Little Town Bakes",
+      "techStack": "Next.JS, Node.JS, Tailwind.css",
+      "screenShot": "/projectImages/project2.png",
+      "description": "E-commerce webapp for a cottage bakery. Complete with admin controls to adjust menu and pricing, checkout workflow, and inventory control.",
+      "externalLink": "https://little-town-bakes.vercel.app/"
+    },
+    {
+      "id": "roast66-coffee",
+      "projectTitle": "Roast66Coffee",
+      "techStack": "Next.JS, .Net, Tailwind.css, Docker",
+      "screenShot": "/projectImages/project3.png",
+      "description": "E-commerce webapp for a mobile coffee shop. Complete with admin controls to adjust menu and pricing, checkout workflow with customer customizable drinks, and inventory control.",
+      "externalLink": "https://roast66coffee-frontend.onrender.com/"
+    },
+    {
+      "id": "recipe-app",
+      "projectTitle": "Recipe App",
+      "techStack": "Next.JS, Node.JS, Tailwind.css",
+      "screenShot": "/projectImages/project4.png",
+      "description": "List of searchable recipes.",
+      "externalLink": "https://grocery-web-jet.vercel.app/"
+    }
+  ]
+}

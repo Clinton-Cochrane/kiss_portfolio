@@ -1,4 +1,4 @@
-import featuredProjectsListView from "./featuredProjectsListView";
+import FeaturedProjectsList from "./FeaturedProjectsList";
 import data from "./featuredProjects.json";
 import Image from "next/image";
 import headshot from "../public/headshot.jpeg";
@@ -6,12 +6,11 @@ import headshot from "../public/headshot.jpeg";
 export default function Home() {
 	return (
 		<div className="text-zinc-100 min-h-screen font-sans">
-			<div className="mx-auto max-w-6xl px-8 pt-4 pb-12 rounded-2xl bg-zinc-900  shadow-xl shadow-red-900 ring-1 ring-red-600/60 space-y-14">
-				<div id="hero_section" className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-					<div className="space-y-6  max-w-2xl md:col-span-2" id="left_half_hero_section">
+			<main className="mx-auto max-w-6xl px-8 pt-4 pb-12 rounded-2xl bg-zinc-900 shadow-xl shadow-red-900 ring-1 ring-red-600/60 space-y-14">
+				<section id="hero_section" aria-label="Introduction" className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+					<div className="space-y-6 max-w-2xl md:col-span-2" id="left_half_hero_section">
 						<div className="space-y-2">
 							<h1 className="font-display text-5xl lg:text-6xl font-semibold tracking-tight" id="name">
-								{" "}
 								Clinton E. <span className="whitespace-nowrap">Cochrane</span>
 							</h1>
 
@@ -35,6 +34,15 @@ export default function Home() {
 								Email Me
 							</a>
 							<a
+								href="/resume.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+								download
+								className="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium ring-1 ring-white/20 hover:ring-white/40 transition"
+							>
+								Resume
+							</a>
+							<a
 								className="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium ring-1 ring-white/20 hover:ring-white/40 transition"
 								href="#featured_projects_section"
 							>
@@ -44,72 +52,63 @@ export default function Home() {
 					</div>
 
 					<div className="flex md:justify-end self-stretch md:pt-2">
-						<div className="rounded-2xl overflow-hidden ring-1 ring-white/10 " id="right_half_hero_section">
-							<Image width={225} height={225} alt="head shot" src={headshot} />
+						<div className="rounded-2xl overflow-hidden ring-1 ring-white/10" id="right_half_hero_section">
+							<Image width={225} height={225} alt="Clinton E. Cochrane, Software Engineer" src={headshot} />
 						</div>
 					</div>
-				</div>
+				</section>
 
-				<div id="featured_projects_section">{featuredProjectsListView(data.projects)}</div>
+				<section id="featured_projects_section" aria-label="Featured projects">
+					<FeaturedProjectsList projects={data.projects} />
+				</section>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="about_section">
+				<section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="about_section" aria-label="About">
 					<div>
 						<h3 className="font-display text-sm uppercase tracking-wider text-zinc-300">Why do I like to build?</h3>
 						<p className="mt-3 text-sm leading-6 text-zinc-300">
-							{" "}
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae faucibus lacus, a aliquam sapien.
-							Curabitur in sagittis urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-							ridiculus mus. Donec lobortis vestibulum lacus quis faucibus. Nunc elementum ut lacus eget congue.
-							Praesent non rhoncus velit. Quisque tincidunt vel nisi ut tincidunt. In ac mi aliquet, pharetra quam
-							vitae, finibus turpis. Morbi lacinia libero turpis, vel fringilla risus cursus id. Sed convallis nisi et
-							fringilla sodales.
+							I build because I enjoy creating. I enjoy fixing things. There is a special warm feeling I get when I see
+							a problem, understand the problem, and turn nothing into a solution for said problem. Building also gives
+							my mind somewhere productive to go. I can focus, I can learn, I can contribute, all while helping people.
 						</p>
 					</div>
 
 					<div>
 						<h3 className="font-display text-sm uppercase tracking-wider text-zinc-300">What do I like to build?</h3>
 						<p className="mt-3 text-sm leading-6 text-zinc-300">
-							{" "}
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae faucibus lacus, a aliquam sapien.
-							Curabitur in sagittis urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-							ridiculus mus. Donec lobortis vestibulum lacus quis faucibus. Nunc elementum ut lacus eget congue.
-							Praesent non rhoncus velit. Quisque tincidunt vel nisi ut tincidunt. In ac mi aliquet, pharetra quam
-							vitae, finibus turpis. Morbi lacinia libero turpis, vel fringilla risus cursus id. Sed convallis nisi et
-							fringilla sodales.
+							I like building solutions. The kind that will turn a messy problem into a clear usable tool. Web apps,
+							mobile apps, APIs, and systems that do something useful in the real world. I am drawn to projects that feel
+							a little ambitious: things that challenge me technically, push my understanding forward, and end up being
+							genuinely helpful to the people using them. If it is practical, thoughtfully designed, or just plain cool,
+							I am probably interested
 						</p>
 					</div>
 					<div>
-						<h3 className="font-display text-sm uppercase tracking-wider">How do I like to build?</h3>
+						<h3 className="font-display text-sm uppercase tracking-wider text-zinc-300">How do I like to build?</h3>
 						<p className="mt-3 text-sm leading-6 text-zinc-300">
-							{" "}
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae faucibus lacus, a aliquam sapien.
-							Curabitur in sagittis urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-							ridiculus mus. Donec lobortis vestibulum lacus quis faucibus. Nunc elementum ut lacus eget congue.
-							Praesent non rhoncus velit. Quisque tincidunt vel nisi ut tincidunt. In ac mi aliquet, pharetra quam
-							vitae, finibus turpis. Morbi lacinia libero turpis, vel fringilla risus cursus id. Sed convallis nisi et
-							fringilla sodales.
+							My best work happens in a dark room with music on, three screens lit up, and Visual Studio Code front and
+							center. I work iteratively: small steps, tested often, slowly stacking into a larger solution. I care
+							about clarity, feedback loops, and steady progress. I don’t chase perfection on the first pass. I refine
+							and experiment as I go, letting the project teach me what it needs next.
 						</p>
 					</div>
 					<div>
-						<h3 className="font-display text-sm uppercase tracking-wider">What do I want to do?</h3>
+						<h3 className="font-display text-sm uppercase tracking-wider text-zinc-300">What do I want to do?</h3>
 						<p className="mt-3 text-sm leading-6 text-zinc-300">
-							{" "}
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae faucibus lacus, a aliquam sapien.
-							Curabitur in sagittis urna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
-							ridiculus mus. Donec lobortis vestibulum lacus quis faucibus. Nunc elementum ut lacus eget congue.
-							Praesent non rhoncus velit. Quisque tincidunt vel nisi ut tincidunt. In ac mi aliquet, pharetra quam
-							vitae, finibus turpis. Morbi lacinia libero turpis, vel fringilla risus cursus id. Sed convallis nisi et
-							fringilla sodales.
+							I want to build tools that make people’s lives easier: web apps, mobile apps, APIs, and systems that
+							remove friction or solve real problems. I’m especially interested in projects that blend technical depth
+							with practical impact: software that’s well-designed, approachable, and actually used. Whether it’s a
+							small utility or a larger platform, I want what I build to matter.
 						</p>
 					</div>
-				</div>
+				</section>
 
-				<div className="grid grid-cols-3 gap-6" id="contact_section">
+				<section className="grid grid-cols-3 gap-6" id="contact_section" aria-label="Contact">
 					<div id="linkedIn">
 						<a
 							className="text-zinc-300 hover:text-white transition"
 							href="https://www.linkedin.com/in/clinton-cochrane"
 							target="_blank"
+							rel="noopener noreferrer"
 						>
 							LinkedIn
 						</a>
@@ -120,7 +119,7 @@ export default function Home() {
 							href="mailto:clinton.edward.cochrane@gmail.com"
 							target="_blank"
 						>
-							email me
+							Email
 						</a>
 					</div>
 					<div id="github">
@@ -128,12 +127,13 @@ export default function Home() {
 							className="text-zinc-300 hover:text-white transition"
 							href="https://www.github.com/clinton-cochrane"
 							target="_blank"
+							rel="noopener noreferrer"
 						>
 							Github
 						</a>
 					</div>
-				</div>
-			</div>
+				</section>
+			</main>
 		</div>
 	);
 }
